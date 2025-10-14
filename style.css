@@ -1,4 +1,3 @@
-/* Import d'une police moderne */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 :root {
@@ -107,6 +106,56 @@ header {
   transform: translateY(-3px);
 }
 
+/* ---- SECTION À PROPOS ---- */
+.about {
+  background-color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.about h2 {
+  color: var(--violet-dark);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.about-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 900px;
+  margin: auto;
+  background-color: var(--bg-light);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.about-info {
+  flex: 1 1 250px;
+  text-align: left;
+}
+
+.about-info ul {
+  list-style: none;
+}
+
+.about-info li {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.about-info strong {
+  color: var(--violet);
+}
+
+.about-text {
+  flex: 2 1 300px;
+  text-align: justify;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
 /* ---- FOOTER ---- */
 footer {
   text-align: center;
@@ -128,7 +177,8 @@ footer {
     font-size: 2rem;
   }
 
-  .intro p {
-    font-size: 1rem;
+  .about-card {
+    flex-direction: column;
+    text-align: left;
   }
 }
