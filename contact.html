@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Mon Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Mon<span>Portfolio</span></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contact-page">
+    <section class="contact-hero">
+      <h1>Contactez-moi</h1>
+      <p>
+        Vous souhaitez me poser une question, discuter d’un projet ou simplement échanger ?
+        Remplissez le formulaire ci-dessous, je vous répondrai dès que possible.
+      </p>
+    </section>
+
+    <section class="contact-form-section">
+      <form class="contact-form" action="#" method="POST">
+        <div class="form-group">
+          <label for="name">Nom complet</label>
+          <input type="text" id="name" name="name" placeholder="Votre nom" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Adresse e-mail</label>
+          <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Sujet</label>
+          <input type="text" id="subject" name="subject" placeholder="Objet de votre message" required />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Votre message..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn">Envoyer le message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 TRISTAN — Tous droits réservés</p>
+  </footer>
+</body>
+</html>
