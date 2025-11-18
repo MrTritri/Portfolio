@@ -33,6 +33,17 @@ header {
   z-index: 100;
 }
 
+::selection {
+  background-color: gold;     /* Couleur de fond dorée */
+  color: black;               /* Couleur du texte sélectionné */
+}
+
+/* Pour compatibilité Firefox */
+::-moz-selection {
+  background-color: gold;
+  color: black;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
