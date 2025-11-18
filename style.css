@@ -38,6 +38,11 @@ header {
   color: black;     
 }
 
+::-moz-selection {
+  background-color: gold;
+  color: black;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -79,7 +84,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 60vh;
   text-align: center;
   padding: 2rem;
   background: linear-gradient(135deg, var(--violet), var(--violet-dark));
