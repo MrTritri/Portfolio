@@ -34,14 +34,8 @@ header {
 }
 
 ::selection {
-  background-color: gold;     /* Couleur de fond dorée */
-  color: black;               /* Couleur du texte sélectionné */
-}
-
-/* Pour compatibilité Firefox */
-::-moz-selection {
   background-color: gold;
-  color: black;
+  color: black;     
 }
 
 .navbar {
