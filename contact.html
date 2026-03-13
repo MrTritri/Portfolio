@@ -29,28 +29,34 @@
     </section>
 
     <section class="contact-form-section">
-      <form class="contact-form" action="#" method="POST">
+      <form class="contact-form" action="https://formspree.io/f/mnjgzayk" method="POST">
+
+        <input type="hidden" name="_next" value="https://dacquin-tristan.fr/merci.html">
+
+        <input type="hidden" name="_to" value="contact.dacquin-tristan@mail.fr">
+
         <div class="form-group">
           <label for="name">Nom complet</label>
-          <input type="text" id="name" name="name" placeholder="Votre nom" required />
+          <input type="text" id="name" name="name" required>
         </div>
 
         <div class="form-group">
           <label for="email">Adresse e-mail</label>
-          <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+          <input type="email" id="email" name="email" required>
         </div>
 
         <div class="form-group">
           <label for="subject">Sujet</label>
-          <input type="text" id="subject" name="subject" placeholder="Objet de votre message" required />
+          <input type="text" id="subject" name="subject" required>
         </div>
 
         <div class="form-group">
           <label for="message">Message</label>
-          <textarea id="message" name="message" rows="6" placeholder="Votre message..." required></textarea>
+          <textarea id="message" name="message" rows="6" required></textarea>
         </div>
 
         <button type="submit" class="btn">Envoyer le message</button>
+
       </form>
     </section>
   </main>
