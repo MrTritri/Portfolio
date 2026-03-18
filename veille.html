@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mon Portfolio - Veille stratégique</title>
+  <link rel="stylesheet" href="style/style_veille.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Tristan<span> Dacquin</span></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="veille.html" class="active">Veille stratégique</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="projects-hero">
+        <h1>Ma veille personnelle !</h1>
+        <p>Suivi des failles, attaques et actualités en cybersécurité, système et réseau.</p>
+  </section>
+
+  <main class="projects-page">
+    <section class="projects-list">
+
+      <div class="filter-bar">
+        <select id="sortSelect">
+          <option value="default">Dernier ajout</option>
+          <option value="category">Trier par genre</option>
+        </select>
+      </div>
+
+
+      <div class="veille-grid">
+
+
+      <div class="veille-card">
+        <span class="tag breach">DATA BREACH</span>
+        <h3>Fuite de données à la CNAM (Assurance Maladie)</h3>
+        <p>
+          des données personnelles concernant plus de 500 000 Français ont été volées par un ou plusieurs individus non identifiés.
+        </p>
+
+        <a 
+          href="https://www.lemonde.fr/pixels/article/2022/03/18/assurance-maladie-des-donnees-personnelles-concernant-plus-de-500-000-francais-volees_6118149_4408996.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+        Lire l'article →
+        </a>
+      </div>
+
+
+      <div class="veille-card">
+        <span class="tag system">SYSTEME</span>
+        <h3>Faille critique Ubuntu (accès root)</h3>
+        <p>
+          Une vulnérabilité dans Snap permet une élévation de privilèges et un accès root sur certaines machines Linux.
+        </p>
+
+        <a 
+          href="https://www.it-connect.fr/cve-2026-3888-quand-le-nettoyage-systeme-dubuntu-offre-un-acces-root"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+        Lire l'article →
+        </a>
+      </div>
+
+
+      <div class="veille-card">
+        <span class="tag network">RÉSEAU</span>
+        <h3>Attaque DDoS record sur Microsoft Azure</h3>
+        <p>
+          La plus grande attaque DDoS jamais enregistrée à ce jour a été bloquée par Microsoft.
+        </p>
+
+        <a 
+          href="https://www.lemondeinformatique.fr/actualites/lire-microsoft-a-bloque-une-attaque-ddos-record-de-15-tbps-98534.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+        Lire l'article →
+        </a>
+      </div>
+
+
+      <div class="veille-card">
+        <span class="tag network">RÉSEAU</span>
+        <h3>Waze utilisé pour suivre les utilisateurs</h3>
+        <p>
+          Une faille a permis à des chercheurs de suivre les déplacements des utilisateurs en temps réel via les données GPS de l'application.
+        </p>
+        <a href="https://www.bitdefender.com/fr-fr/blog/hotforsecurity/un-chercheur-decouvre-une-vulnerabilite-dans-lapi-de-waze-permettant-de-suivre-les-utilisateurs"
+          target="_blank"
+          rel="noopener noreferrer">
+          Lire l'article →
+        </a>
+      </div>
+
+
+      <div class="veille-card">
+        <span class="tag breach">DATA BREACH</span>
+        <h3>Free lourdement condamné pour la fuite de donnée d'Octobre 2024</h3>
+        <p>
+          L'opérateur est sanctionné pour avoir conservé les données personnelles tel que les IBAN d'anciens abonnés sans limite de temps.
+        </p>
+
+        <a 
+          href="https://www.quechoisir.org/actualite-piratage-de-free-free-lourdement-condamne-pour-des-defaillances-dans-la-securisation-des-donnees-n173754/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+        Lire l'article →
+        </a>
+      </div>
+
+
+      <div class="veille-card">
+        <span class="tag other">AUTRES..</span>
+        <h3>Hausse du prix de la RAM en 2025</h3>
+        <p>
+          Le prix de la mémoire RAM augmente en raison de la forte demande liée à l’IA et aux data centers, impactant le coût des infrastructures informatiques.
+        </p>
+        <a 
+          href="https://www.generation-nt.com/actualites/prix-ram-hausse-2025-2046619"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+        Lire l'article →
+        </a>
+      </div>
+
+
+  </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 TRISTAN — Tous droits réservés</p>
+  </footer>
+
+  <script>
+  const select = document.getElementById("sortSelect");
+  const grid = document.querySelector(".veille-grid");
+  const cards = Array.from(document.querySelectorAll(".veille-card"));
+
+  // sauvegarde l’ordre initial
+  const originalOrder = [...cards];
+
+  select.addEventListener("change", () => {
+    if (select.value === "default") {
+      grid.innerHTML = "";
+      originalOrder.forEach(card => grid.appendChild(card));
+    }
+
+    if (select.value === "category") {
+      const sorted = [...cards].sort((a, b) => {
+        const tagA = a.querySelector(".tag").textContent;
+        const tagB = b.querySelector(".tag").textContent;
+        return tagA.localeCompare(tagB);
+      });
+
+      grid.innerHTML = "";
+      sorted.forEach(card => grid.appendChild(card));
+    }
+  });
+  </script>
+
+</body>
+</html>

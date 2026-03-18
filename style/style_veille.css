@@ -1,0 +1,277 @@
+/* ---- IMPORT POLICE ---- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* ---- VARIABLES ---- */
+:root {
+  --violet: #7c3aed;
+  --violet-dark: #5b21b6;
+  --bg-light: #f9f9ff;
+  --text-dark: #1a1a1a;
+}
+
+/* ---- RESET ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---- BASE ---- */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+/* ---- NAVBAR ---- */
+header {
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.logo span {
+  color: var(--violet);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: var(--violet);
+}
+
+/* ---- HERO ---- */
+.projects-hero {
+  text-align: center;
+  background: linear-gradient(135deg, var(--violet), var(--violet-dark));
+  color: white;
+  padding: 4rem 2rem 3rem;
+}
+
+.projects-hero h1 {
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
+}
+
+.projects-hero p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.1rem;
+}
+
+/* ---- SECTION VEILLE ---- */
+.projects-list {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+.projects-list h2 {
+  text-align: center;
+  color: var(--violet-dark);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* ---- GRID ---- */
+.veille-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ---- CARTE ---- */
+.veille-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.veille-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(124,58,237,0.2);
+}
+
+.veille-card h3 {
+  margin: 0.5rem 0;
+  color: var(--violet-dark);
+}
+
+.veille-card p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.veille-card a {
+  text-decoration: none;
+  color: var(--violet);
+  font-weight: 600;
+}
+
+/* ---- TAGS ---- */
+.tag {
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: white;
+}
+
+.breach { background: #ef4444; }
+.system { background: #3b82f6; }
+.network { background: #10b981; }
+.other { background: #f59e0b; }
+
+/* ---- FOOTER ---- */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: white;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 3rem;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .projects-hero h1 {
+    font-size: 1.8rem;
+  }
+}
+
+.filter-bar {
+  text-align: right;
+  margin-bottom: 1.5rem;
+}
+
+#sortSelect {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+}
+
+
+/* ========================= */
+/* 📱 RESPONSIVE VEILLE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+    align-items: center;
+  }
+
+  /* HERO */
+  .projects-hero {
+    padding: 3rem 1rem;
+  }
+
+  .projects-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .projects-hero p {
+    font-size: 1rem;
+  }
+
+  /* SECTION */
+  .projects-list {
+    padding: 0 1rem;
+  }
+
+  /* GRID → 1 colonne mobile */
+  .veille-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* CARTES */
+  .veille-card {
+    padding: 1.2rem;
+  }
+
+  .veille-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .veille-card p {
+    font-size: 0.9rem;
+  }
+
+  /* FILTRE */
+  .filter-bar {
+    text-align: center;
+  }
+
+  #sortSelect {
+    width: 100%;
+    max-width: 250px;
+  }
+
+}
+
+
+/* ========================= */
+/* 📱 PETITS TÉLÉPHONES */
+/* ========================= */
+
+@media (max-width: 480px) {
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    font-size: 0.9rem;
+  }
+
+  .projects-hero h1 {
+    font-size: 1.5rem;
+  }
+
+}

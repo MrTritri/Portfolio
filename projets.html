@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mon Portfolio - Projets</title>
+
+<link rel="stylesheet" href="style/style.css">
+
+<style>
+
+/* MODAL */
+
+.modal{
+display:none;
+position:fixed;
+z-index:1000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background-color:rgba(0,0,0,0.6);
+justify-content:center;
+align-items:center;
+}
+
+.modal-content{
+background:white;
+padding:30px;
+border-radius:10px;
+width:350px;
+text-align:center;
+position:relative;
+}
+
+.close{
+position:absolute;
+top:10px;
+right:15px;
+font-size:28px;
+cursor:pointer;
+}
+
+.buttons{
+margin-top:20px;
+}
+
+.btn{
+display:inline-block;
+margin:10px;
+padding:10px 20px;
+background:#00bcd4;
+color:white;
+text-decoration:none;
+border-radius:6px;
+}
+
+.btn:hover{
+background:#0097a7;
+}
+
+/* rendre les projets cliquables */
+
+.projects-list li{
+cursor:pointer;
+transition:0.2s;
+}
+
+.projects-list li:hover{
+transform:scale(1.02);
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<header>
+<nav class="navbar">
+
+<div class="logo">
+Tristan<span> Dacquin</span>
+</div>
+
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="projets.html" class="active">Projets</a></li>
+<li><a href="veille.html">Veille stratégique</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+
+</nav>
+</header>
+
+
+
+<main class="projects-page">
+
+<section class="projects-hero">
+<h1>Mes Projets</h1>
+<p>Voici la liste des projets que j'ai réalisé :</p>
+</section>
+
+
+
+<section class="projects-list">
+
+<h2>Liste de mes projets BTS SIO</h2>
+
+<ul>
+
+<li onclick="openModal('ad')">
+<strong>💡 Projet 1 :</strong>
+Mise en place d’une infrastructure Active Directory sécurisée.
+</li>
+
+<li onclick="openModal('zabbix')">
+<strong>💡 Projet 2 :</strong>
+Déploiement d’une solution de supervision du SI avec Zabbix.
+</li>
+
+<li onclick="openModal('reseau')">
+<strong>💡 Projet 3 :</strong>
+Conception d’une infrastructure réseau segmentée sur Packet Tracer.
+</li>
+
+<li onclick="openModal('entreprise')">
+<strong>💡 Projet 4 :</strong>
+Projet d’application réalisé en entreprise.
+</li>
+
+</ul>
+
+</section>
+
+</main>
+
+
+
+<!-- MODAL -->
+
+<div id="modal" class="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal()">&times;</span>
+
+<h2 id="modal-title">Projet</h2>
+
+<div class="buttons">
+
+<a id="pdf-link" class="btn" download>
+Télécharger le PDF
+</a>
+
+<a id="zip-link" class="btn" download>
+Télécharger l'archive
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<footer>
+<p>© 2025 TRISTAN — Tous droits réservés</p>
+</footer>
+
+
+
+<script>
+
+function openModal(project){
+
+const modal = document.getElementById("modal");
+const title = document.getElementById("modal-title");
+const pdf = document.getElementById("pdf-link");
+const zip = document.getElementById("zip-link");
+
+modal.style.display = "flex";
+
+/* on affiche l'archive par défaut */
+zip.style.display = "inline-block";
+
+if(project === "ad"){
+title.innerText = "Infrastructure Active Directory";
+pdf.href = "pdf/ppe1.pdf";
+zip.href = "archives/ppe1.zip";
+}
+
+if(project === "zabbix"){
+title.innerText = "Supervision Zabbix";
+pdf.href = "pdf/ppe2.pdf";
+zip.href = "archives/ppe2.zip";
+}
+
+if(project === "reseau"){
+title.innerText = "Infrastructure réseau VLAN";
+pdf.href = "pdf/ppe3.pdf";
+zip.href = "archives/ppe3.zip";
+}
+
+if(project === "entreprise"){
+title.innerText = "Projet entreprise";
+pdf.href = "pdf/ppe4.pdf";
+
+/* on cache le bouton archive */
+zip.style.display = "none";
+}
+
+}
+
+function closeModal(){
+document.getElementById("modal").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>
