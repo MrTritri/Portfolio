@@ -565,11 +565,30 @@ footer {
     padding: 1rem;
   }
 
+  /* MENU HORIZONTAL SCROLL */
   .nav-links {
-    flex-direction: column;
+    flex-direction: row;
+    overflow-x: auto;
     gap: 1rem;
     margin-top: 1rem;
-    align-items: center;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links li {
+    flex: 0 0 auto;
+  }
+
+  .nav-links a {
+    white-space: nowrap;
+    padding: 0.5rem 1rem;
+    background: #f3f3f3;
+    border-radius: 20px;
+    font-size: 0.9rem;
   }
 
   /* HERO */
