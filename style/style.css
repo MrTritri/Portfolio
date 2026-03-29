@@ -667,22 +667,19 @@ footer {
 }
 
 /* ========================= */
-/* 🔥 NAVBAR MODERNE MOBILE */
+/* 🔥 NAVBAR MOBILE FIX */
 /* ========================= */
 
-/* BURGER */
 .burger {
   display: none;
   font-size: 1.8rem;
   cursor: pointer;
 }
 
-/* Animation */
 .nav-links {
   transition: all 0.3s ease;
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
 
   .navbar {
@@ -698,7 +695,7 @@ footer {
   .nav-links {
     position: absolute;
     top: 70px;
-    right: 0;
+    left: 0; /* IMPORTANT */
     background: white;
     width: 100%;
     flex-direction: column;
@@ -706,7 +703,6 @@ footer {
     gap: 1.5rem;
     padding: 2rem 0;
 
-    /* animation propre */
     opacity: 0;
     transform: translateY(-10px);
     pointer-events: none;
@@ -716,9 +712,5 @@ footer {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
-  }
-
-  .nav-links a {
-    font-size: 1.1rem;
   }
 }
