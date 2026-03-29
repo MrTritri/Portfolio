@@ -565,30 +565,12 @@ footer {
     padding: 1rem;
   }
 
-  /* MENU HORIZONTAL SCROLL */
-  .nav-links {
-    flex-direction: row;
-    overflow-x: auto;
-    gap: 1rem;
-    margin-top: 1rem;
-    padding-bottom: 0.5rem;
-    scrollbar-width: none;
-  }
-
   .nav-links::-webkit-scrollbar {
     display: none;
   }
 
   .nav-links li {
     flex: 0 0 auto;
-  }
-
-  .nav-links a {
-    white-space: nowrap;
-    padding: 0.5rem 1rem;
-    background: #f3f3f3;
-    border-radius: 20px;
-    font-size: 0.9rem;
   }
 
   /* HERO */
@@ -682,4 +664,61 @@ footer {
     font-size: 1.5rem;
   }
 
+}
+
+/* ========================= */
+/* 🔥 NAVBAR MODERNE MOBILE */
+/* ========================= */
+
+/* BURGER */
+.burger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Animation */
+.nav-links {
+  transition: all 0.3s ease;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: white;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 0;
+
+    /* animation propre */
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+  }
+
+  .nav-links.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+  }
 }
